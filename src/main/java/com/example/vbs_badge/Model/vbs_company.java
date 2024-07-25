@@ -10,8 +10,6 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalTime; // Import LocalTime from java.time
-
 @Entity
 @Getter
 @Setter
@@ -30,5 +28,4 @@ public class vbs_company {
     @Column(columnDefinition = "MEDIUMBLOB")
     private byte[] logo;
 
-    // Constructors, getters, setters, etc. as needed
 }

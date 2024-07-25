@@ -1,7 +1,11 @@
 package com.example.vbs_badge.Controller;
 
+
 import com.example.vbs_badge.Model.vbs_company;
 import com.example.vbs_badge.Service.CompanyService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +17,11 @@ public class CompanyController {
 
     @Autowired
     private CompanyService companyService;
+
+    @GetMapping("/viewcompanies")
+    public List<vbs_company> getCompanies() {
+        return companyService.getAllCompanies();
+    }
 
     // Endpoint to retrieve a company by ID
     @GetMapping("/{id}")
@@ -31,6 +40,4 @@ public class CompanyController {
             return ResponseEntity.notFound().build();
         }
     }
-
-    // Add more endpoints as needed for CRUD operations on vbs_company
 }

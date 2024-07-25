@@ -3,6 +3,9 @@ package com.example.vbs_badge.Service.Impl;
 import com.example.vbs_badge.Model.vbs_company;
 import com.example.vbs_badge.Repository.CompanyRepository;
 import com.example.vbs_badge.Service.CompanyService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +18,11 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public vbs_company getCompanyById(Integer id) {
         return companyRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<vbs_company> getAllCompanies() {
+        return companyRepository.findAll();
     }
 
     @Override
